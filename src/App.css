@@ -116,11 +116,12 @@
   padding: 2rem;
 }
 
-.shop-now-button {
-  padding: 1.2rem 3.5rem;
+.shop-now-button-0 {
+  padding: 1.2rem 2.5rem;
   left: 40%;
   font-size: 1.1rem;
   font-weight: 600;
+  font-family: "Cascadia Code", sans-serif;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -130,7 +131,7 @@
   background: #212529;
 }
 
-.shop-now-button::before {
+.shop-now-button-0::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -143,14 +144,60 @@
   );
   z-index: 0;
 
-  animation: slideGradient 10s linear alternate infinite paused;
+  animation: slideGradient 50s linear infinite paused;
 }
 
-.shop-now-button:hover::before {
+.shop-now-button-0:hover::before {
   animation-play-state: running;
 }
 
-.shop-now-button span {
+.shop-now-button-0 span {
+  position: relative;
+  z-index: 1;
+  background-color: #D5CEC2;
+  padding: 0.5em 1.2em;
+  color: #212529;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+
+.shop-now-button-1 {
+  padding: 1.2rem 2.5rem;
+  left: -40%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Cascadia Code", sans-serif;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+  background: #212529;
+}
+
+.shop-now-button-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #212529,
+    #212529 10px,
+    #D5CEC2 10px,
+    #D5CEC2 20px
+  );
+  z-index: 0;
+
+  animation: slideGradient 50s linear infinite paused;
+}
+
+.shop-now-button-1:hover::before {
+  animation-play-state: running;
+}
+
+.shop-now-button-1 span {
   position: relative;
   z-index: 1;
   background-color: #D5CEC2;
@@ -162,7 +209,7 @@
 
 @keyframes slideGradient {
   0% {
-    left: -100%;
+    left: -1000%;
   }
   100% {
     left: 0;
@@ -187,7 +234,7 @@
 
 .afterCarousel {
   background-color: #E9ECEF;
-  padding: 5rem 2rem;
+  padding: 5rem 0rem;
   width: 100%;
 }
 

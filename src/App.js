@@ -12,8 +12,7 @@ function App() {
 
   const banners = [
     "https://res.cloudinary.com/dz8avfbml/image/upload/v1760449412/ICEBREAKERCOLLECTIONBANNER2_zh48ms.png",
-    "https://res.cloudinary.com/dz8avfbml/image/upload/v1760449412/ICEBREAKERCOLLECTIONBANNER2_zh48ms.png",
-    "https://res.cloudinary.com/dz8avfbml/image/upload/v1760449412/ICEBREAKERCOLLECTIONBANNER2_zh48ms.png"
+    "https://res.cloudinary.com/dz8avfbml/image/upload/v1760551379/sleeper_build_collection_epwb1i.png"
   ];
 
   
@@ -67,7 +66,7 @@ function App() {
           <div className="hero-banner">
             <img src={src} alt={`Banner ${i + 1}`} />
             <div className="hero-content">
-              <button className="shop-now-button">
+              <button className={`shop-now-button-${i}`}>
                 <span>SHOP NOW</span>
               </button>
             </div>
