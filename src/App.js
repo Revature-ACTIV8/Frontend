@@ -167,7 +167,7 @@ function App() {
           </div>
 
           <div class="footer-right">
-            <p>&copy; 2025 FYK, No rights reserved.</p>
+            <p>&copy; 2025 Min, Chris, and Hasan, No rights reserved.</p>
           </div>
         </div>
       </footer>
