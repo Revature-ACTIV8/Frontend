@@ -149,6 +149,28 @@ function App() {
           </div>
         </div>
       </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <h3>ACTIV8</h3>
+            <p>by FYK</p>
+          </div>
+
+          <div class="footer-center">
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Search</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-right">
+            <p>&copy; 2025 FYK, No rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

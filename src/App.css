@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #D5CEC2;
+  font-family: "Cascadia Code", sans-serif;
 }
 
 .navbar {
@@ -382,11 +383,59 @@
   line-height: 1.4;
 }
 
-/* --- Responsive --- */
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: "Cascadia Code", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #b4aa96;
+}
+
+.footer-right p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
   .afterCarousel {
     background-attachment: scroll;
-    background-position: center -20px; /* small adjustment */
+    background-position: center -20px;
     background-size: 900px 100px;
   }
 
@@ -400,5 +449,13 @@
 
   .top-selling-grid {
     height: auto;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
