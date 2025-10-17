@@ -233,9 +233,11 @@
 }
 
 .afterCarousel {
-  background-color: #E9ECEF;
+  position: relative;
   padding: 5rem 0rem;
   width: 100%;
+  min-height: 100vh;
+  background: #E9ECEF;
 }
 
 .subsection-container {
@@ -246,6 +248,12 @@
   grid-template-rows: 1fr, 1fr;
   gap: 3rem;
   align-items: start;
+}
+
+.afterCarousel .subsection-container {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
 }
 
 .section-title {
@@ -265,6 +273,8 @@
   gap: 1rem;
   height: 500px;
   position: relative;
+  border-right: 2px solid #212529;
+  padding-right: 3rem;
 }
 
 .larger-top-selling-item img {
@@ -373,7 +383,13 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .afterCarousel {
+    background-attachment: scroll;
+    background-position: center -20px; /* small adjustment */
+    background-size: 900px 100px;
+  }
+
   .subsection-container {
     grid-template-columns: 1fr;
   }
