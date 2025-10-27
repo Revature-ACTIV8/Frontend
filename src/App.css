@@ -1,6 +1,14 @@
+:root {
+  --light: #F8F9FA;
+  --dark: #212529;
+  --primary: #495057;
+  --secondary: #868E96;
+  --background: #D5CEC2;
+}
+
 .App {
   text-align: center;
-  background-color: #D5CEC2;
+  background-color: var(--background);
   font-family: "Cascadia Code", sans-serif;
 }
 
@@ -9,8 +17,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2%;
-  color: #212529;
-  background-color: #D5CEC2;
+  color: var(--dark);
+  background-color: var(--background);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 96%;
@@ -43,7 +51,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #212529;
+  color: var(--dark);
   transition: color 0.3s ease;
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -51,21 +59,21 @@
 }
 
 .nav-links a:hover {
-  color: #212529;
+  color: var(--dark);
 }
 
 .icon-button {
   background: none;
   border: none;
   cursor: pointer;
-  color: #495057;
+  color: var(--primary);
   padding: 0.5rem;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .icon-button:hover {
-  color: #212529;
+  color: var(--dark);
 }
 
 .cart-button {
@@ -76,8 +84,8 @@
   position: absolute;
   top: -7px;
   right: -8px;
-  background-color: #212529;
-  color: #F8F9FA;
+  background-color: var(--dark);
+  color: --light;
   font-size: 0.75rem;
   padding: 0.2rem 0.2rem;
   border-radius: 10px;
@@ -110,7 +118,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #F8F9FA;
+  color: var(--light);
   z-index: 2;
   width: 100%;
   max-width: 800px;
@@ -129,7 +137,7 @@
   letter-spacing: 2px;
   position: relative;
   overflow: hidden;
-  background: #212529;
+  background: var(--dark);
 }
 
 .shop-now-button-0::before {
@@ -155,9 +163,9 @@
 .shop-now-button-0 span {
   position: relative;
   z-index: 1;
-  background-color: #D5CEC2;
+  background-color: var(--background);
   padding: 0.5em 1.2em;
-  color: #212529;
+  color: var(--dark);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -175,7 +183,7 @@
   letter-spacing: 2px;
   position: relative;
   overflow: hidden;
-  background: #212529;
+  background: var(--dark);
 }
 
 .shop-now-button-1::before {
@@ -201,9 +209,9 @@
 .shop-now-button-1 span {
   position: relative;
   z-index: 1;
-  background-color: #D5CEC2;
+  background-color: var(--background);
   padding: 0.5em 1.2em;
-  color: #212529;
+  color: var(--dark);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -258,7 +266,7 @@
 }
 
 .section-title {
-  color: #212529;
+  color: var(--dark);
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -274,7 +282,7 @@
   gap: 1rem;
   height: 500px;
   position: relative;
-  border-right: 2px solid #212529;
+  border-right: 2px solid var(--dark);
   padding-right: 3rem;
 }
 
@@ -309,12 +317,12 @@
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  border: 3px dashed #8f9192;
+  border: 3px dashed var(--dark);
   transition: border-color 1s ease;
 }
 
 .top-item:hover {
-  border: 2px solid #4e4e4e;
+  border: 2px solid var(--dark);
 }
 
 .top-item img {
@@ -358,8 +366,8 @@
 }
 
 .genre-card {
-  background-color: #212529;
-  color: #E9ECEF;
+  background-color: var(--dark);
+  color: var(--light);
   border-radius: 1rem;
   padding: 2rem 1.5rem;
   text-align: center;
@@ -424,7 +432,7 @@
 }
 
 .footer-links a:hover {
-  color: #b4aa96;
+  color: var(--secondary);
 }
 
 .footer-right p {
