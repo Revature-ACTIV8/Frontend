@@ -1,9 +1,13 @@
+//handles the swiper carousel
 import "swiper/css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+//css style
 import './App.css';
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -14,6 +18,9 @@ function App() {
     "https://res.cloudinary.com/dz8avfbml/image/upload/v1760449412/ICEBREAKERCOLLECTIONBANNER2_zh48ms.png",
     "https://res.cloudinary.com/dz8avfbml/image/upload/v1760551379/sleeper_build_collection_epwb1i.png"
   ];
+
+  const navigate = useNavigate();
+
 
   
 
@@ -31,7 +38,18 @@ function App() {
           </div>
         </div>
         <div className="nav-right">
-          <button className="icon-button">
+          <button
+            className="profile-button"
+            onClick={() => {
+              const user = sessionStorage.getItem("user");
+              if (user) {
+                navigate("/profile"); // if user is logged in
+              } else {
+                navigate("/auth"); // if user is not logged in
+              }
+            }}
+            title="profile / login"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>

@@ -62,7 +62,7 @@
   color: var(--dark);
 }
 
-.icon-button {
+.profile-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -72,12 +72,22 @@
   transition: color 0.3s ease;
 }
 
-.icon-button:hover {
+.profile-button:hover {
   color: var(--dark);
 }
 
 .cart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  padding: 0.5rem;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.cart-button:hover {
+  color: var(--dark);
 }
 
 .cart-count {
@@ -466,4 +476,107 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+}
+
+/* Auth page styling*/
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: gradientShift 10s ease infinite alternate;
+  background: linear-gradient(120deg, var(--light), var(--background), var(--secondary), var(--dark));
+  background-size: 300% 300%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10.2rem 1rem;
+}
+
+.auth-form {
+  background-color: rgba(248, 249, 250, 0.85);
+  padding: 2.5rem 4rem;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  font-family: "Cascadia Code", sans-serif;
+}
+
+.auth-form h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  letter-spacing: 1px;
+}
+
+.auth-form input {
+  display: block;
+  width: 100%;
+  margin: 0.8rem 0;
+  text-align: left;
+  padding: 0.9rem 0.9rem;
+  border: 2px solid var(--dark);
+  border-radius: 6px;
+  background-color: var(--light);
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-sizing: border-box
+}
+
+.auth-form input:hover {
+  border-color: var(--primary);
+  background-color: #F1F3F5;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background-color: var(--background);
+}
+
+.auth-button {
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+  border: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: var(--secondary);
+}
+
+.auth-toggle {
+  margin-top: 1.5rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+.auth-toggle span {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.auth-toggle span:hover {
+  text-decoration: underline;
 }
