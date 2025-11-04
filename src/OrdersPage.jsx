@@ -9,7 +9,7 @@ export default function OrderHistoryPage() {
   const navigate = useNavigate();
 
   const user = JSON.parse(sessionStorage.getItem("user"));
-  const customerId = user?.userId;
+  const customerId = user?.id;
 
   useEffect(() => {
     async function fetchOrders() {
@@ -125,6 +125,26 @@ export default function OrderHistoryPage() {
                 </div>
             )}
         </div>
+
+        <footer className="footer">
+            <div className="footer-container">
+            <div className="footer-left">
+                <h3>ACTIV8</h3>
+                <p>by FYK</p>
+            </div>
+            <div className="footer-center">
+                <ul className="footer-links">
+                <li><a onClick={() => {navigate("/");}}>Home</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div className="footer-right">
+                <p>&copy; 2025 Min, Chris, and Hasan, No rights reserved.</p>
+            </div>
+            </div>
+        </footer>
     </div>  
 
   );
