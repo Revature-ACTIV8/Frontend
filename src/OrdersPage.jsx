@@ -14,7 +14,7 @@ export default function OrderHistoryPage() {
   useEffect(() => {
     async function fetchOrders() {
       try {
-        const response = await fetch(`http://localhost:8080/order/customer/${customerId}`);
+        const response = await fetch(`http://localhost:8080/orders/customer/${customerId}`);
         if (!response.ok) throw new Error("Failed to fetch orders");
         const data = await response.json();
         setOrders(data);
