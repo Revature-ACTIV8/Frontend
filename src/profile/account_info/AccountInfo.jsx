@@ -16,7 +16,7 @@ function AccountInfo() {
     setMessage("");
 
     try {
-      const response = await axios.patch('http://localhost:8080/user', editData);
+      const response = await axios.patch(`http://localhost:8080/user/${user.id}`, editData);
 
       sessionStorage.setItem("user", JSON.stringify(response.data));
 

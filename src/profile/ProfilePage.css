@@ -105,6 +105,22 @@
 .logout-btn:hover {
   background-color: #fee2e2;
 }
+.delete-account-btn {
+  width: 100%;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
 
 /* Addresses */
 .address-grid {

@@ -3,6 +3,7 @@ import "./ProfilePage.css";
 import { useNavigate } from "react-router-dom";
 import ChangePassword from "./password/ChangePassword";
 import AccountInfo from "./account_info/AccountInfo";
+import axios from "axios";
 
 const UserContext = createContext();
 
@@ -70,6 +71,20 @@ function ProfilePage() {
     navigate("/auth");
   };
 
+  const handleDeleteAccount = async () => {
+    if (window.confirm("Are you sure you want to delete your account? This cannot be undone.")) {
+      try {
+        await axios.delete(`http://localhost:8080/user/${user.id}`);
+        sessionStorage.removeItem("user");
+        navigate("/auth");
+      }
+      catch (error) {
+        console.error("Error deleting account:", error);
+        alert("Failed to delete account. Please try again later.");
+      }
+    }
+  };
+
   return (
     <>
       <div className="profile-page">
@@ -111,6 +126,7 @@ function ProfilePage() {
               </nav>
 
               <button className="logout-btn" onClick={handleLogout}>Logout</button>
+              <button className="delete-account-btn" onClick={handleDeleteAccount}>Delete Account</button>
             </aside>
 
             {/* Main Content */}
