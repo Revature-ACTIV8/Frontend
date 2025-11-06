@@ -58,8 +58,21 @@ function AuthPage() {
             }
             catch (err) {
                 if (err.response) {
+                    const data = err.response.data;
+                    if (Array.isArray(data)) {
+                        // unlikely, but safe
+                        setMessage(data.join("\n"));
+                    } else if (typeof data === "object") {
+                        // Jakarta validation: multiple fields
+                        setMessage(Object.values(data).join("\n"));
+                    } else if (typeof data === "string") {
+                        // Custom exceptions returning a plain string
+                        setMessage(data);
+                    } else {
+                        setMessage("An unexpected error occurred.");
+                    }
+
                     console.log("Error Response " + err);
-                    setMessage(err.response.data.join("\n"))
                 }
                 else if (err.request) {
                     console.log(err);
