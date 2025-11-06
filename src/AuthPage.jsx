@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function AuthPage() {
     const [isLogin, setIsLogin] = useState(true);
@@ -19,6 +20,7 @@ function AuthPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setMessage("");
 
         if (isLogin) {
             //login
@@ -40,29 +42,38 @@ function AuthPage() {
                     setMessage("Incorrect password.");
                 }
             } catch (err) {
+                
                 console.error(err);
                 setMessage(err.message || "Error logging in");
             }
-        } else {
-        //signup
-        try {
-            const res = await fetch("http://localhost:8080/user", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-            });
-            if (!res.ok) throw new Error("Signup failed");
-            const newUser = await res.json();
-            setMessage(`Account created for ${newUser.username}!`);
-        } catch (err) {
-            console.error(err);
-            setMessage("Signup failed. Try again.");
         }
+        else {
+            //signup
+            try {
+                await axios.post("http://localhost:8080/user", formData);
+
+                setMessage("Accout created sucessfully!");
+
+                setIsLogin(true);
+            }
+            catch (err) {
+                if (err.response) {
+                    console.log("Error Response " + err);
+                    setMessage(err.response.data.join("\n"))
+                }
+                else if (err.request) {
+                    console.log(err);
+                    setMessage(err.request);
+                }
+                else {
+                    setMessage(err.message);
+                }
+            }
         }
     };
 
     return (
-        <div className="App auth-page">
+    <div className="App auth-page">
         <nav className="navbar">
             <div className="nav-left">
             <div className="logo">
@@ -117,18 +128,18 @@ function AuthPage() {
                 {isLogin ? "Log In" : "Sign Up"}
             </button>
 
-            {message && <p style={{ marginTop: "1rem", color: "var(--dark)" }}>{message}</p>}
+            {message && <p className="auth-error-message">{message}</p>}
 
             <p className="auth-toggle">
                 {isLogin ? (
                 <>
                     Don’t have an account?{" "}
-                    <span onClick={() => setIsLogin(false)}>Sign Up</span>
+                    <span onClick={function click() { setIsLogin(false); setMessage("") }}>Sign Up</span>
                 </>
                 ) : (
                 <>
                     Already have an account?{" "}
-                    <span onClick={() => setIsLogin(true)}>Log In</span>
+                    <span onClick={function click() { setIsLogin(true); setMessage("") }}>Log In</span>
                 </>
                 )}
             </p>
@@ -154,7 +165,7 @@ function AuthPage() {
             </div>
             </div>
         </footer>
-        </div>
+     </div>
     );
 }
 

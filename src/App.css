@@ -580,3 +580,9 @@
 .auth-toggle span:hover {
   text-decoration: underline;
 }
+
+.auth-error-message {
+  margin-Top: "1rem";
+  color: red;
+  white-space: pre-line;
+}

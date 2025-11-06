@@ -106,131 +106,6 @@
   background-color: #fee2e2;
 }
 
-/* Main Content */
-.profile-section {
-  background: var(--background);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  margin-bottom: 24px;
-}
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-/* Buttons */
-.primary-btn {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.primary-btn:hover {
-  background: #1d4ed8;
-}
-.success-btn {
-  background: #16a34a;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.success-btn:hover {
-  background: #15803d;
-}
-.save-btn {
-  background: #16a34a;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-.cancel-btn {
-  background: var(--secondary);
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.action-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-/* Forms */
-.info-grid {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.info-field label {
-  display: flex;
-  text-align: left;
-  color: var(--dark);
-  font-weight: bold;
-}
-.info-field input {
-  background-color: white;
-  color: black;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  padding: 8px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-}
-.info-field input:focus {
-  outline: 2px solid #3b82f6;
-  border-color: transparent;
-}
-
-/* Orders */
-.order-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 12px;
-}
-.order-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.status {
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-.status.green {
-  background: #dcfce7;
-  color: #166534;
-}
-.status.blue {
-  background: #dbeafe;
-  color: #1e3a8a;
-}
-.status.yellow {
-  background: #fef9c3;
-  color: #854d0e;
-}
-.order-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-}
-.order-actions {
-  display: inline;
-  gap: 32px;
-}
-
 /* Addresses */
 .address-grid {
   display: grid;
@@ -242,6 +117,9 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 16px;
+}
+.address-card :empty {
+  min-height: 1.5em;
 }
 .default-badge {
   position: absolute;
